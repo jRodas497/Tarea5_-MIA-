@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+build/
+dist/
+.git/
+.gitignore
+*.md
+*.sqlite3
+*.log
+node_modules/
+npm-debug.log
+Dockerfile
+.dockerignore
