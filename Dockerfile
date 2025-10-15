@@ -23,5 +23,9 @@ COPY . /app
 # Expose port
 EXPOSE 5000
 
-# Use gunicorn for production; fallback to flask if gunicorn missing
-CMD ["sh", "-c", "exec gunicorn --bind 0.0.0.0:5000 'app:app' --workers 2 --threads 2"]
+# Use gunicorn for production; print access and error logs to stdout for debugging
+CMD ["sh", "-c", "exec gunicorn --bind 0.0.0.0:5000 'app:app' --workers 2 --threads 2 --access-logfile '-' --error-logfile '-' --timeout 120"]
+
+# Optional simple healthcheck (runs in container; Docker will use it when available)
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:5000/api/hello || exit 1
