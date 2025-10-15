@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EC2 Demo · API + Front</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="container">
+    <h1>Demo: API en EC2</h1>
+    <p class="subtitle">Flask (backend) + Interfaz sencilla (frontend)</p>
+  </header>
+
+  <main class="container card">
+    <section class="row">
+      <div>
+        <h2>Estado</h2>
+        <div id="status" class="badge">Desconocido</div>
+        <button id="btnPing" class="btn">Probar /api/hello</button>
+      </div>
+
+      <div>
+        <h2>Información</h2>
+        <p>Haz clic para consultar <code>/api/info</code> y ver la respuesta JSON.</p>
+        <button id="btnInfo" class="btn outline">Obtener info</button>
+      </div>
+    </section>
+
+    <section class="result">
+      <h3>Respuesta</h3>
+      <pre id="output">—</pre>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>EC2 · Ubuntu · Flask · HTML/CSS/JS</small>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

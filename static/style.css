@@ -1,0 +1,107 @@
+:root {
+  --bg: #0f172a;
+  --surface: #111827;
+  --card: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #60a5fa;
+  --primary-strong: #3b82f6;
+  --ok: #34d399;
+  --warn: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 20% -10%, #1b2a4a 0%, var(--bg) 55%, #0b1020 100%);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header { padding-top: 28px; padding-bottom: 4px; }
+h1 { margin: 0 0 6px; font-size: 28px; }
+.subtitle { margin: 0; color: var(--muted); }
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+h2 { margin: 0 0 8px; font-size: 20px; }
+h3 { margin: 12px 0 8px; font-size: 16px; color: var(--muted); }
+
+.btn {
+  appearance: none;
+  border: none;
+  background: var(--primary);
+  color: #0a0a0a;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 6px 18px rgba(96,165,250,0.35);
+}
+.btn:hover { background: var(--primary-strong); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: #374151;
+  color: #e5e7eb;
+  margin: 6px 0 12px;
+}
+.badge.ok { background: rgba(52,211,153,0.2); color: var(--ok); }
+.badge.warn { background: rgba(245,158,11,0.2); color: var(--warn); }
+
+.result {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+pre {
+  margin: 0;
+  padding: 10px;
+  max-height: 360px;
+  overflow: auto;
+  background: #0b1020;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 24px;
+}
